@@ -42,8 +42,7 @@
     $i = 0;
     $editas = " ";
     $delitas = " ";
-    //while(getPlayer($ID, $name, $surname, $birth_years, $shirt_number) != false){
-    
+     
     $rows = getPlayers();
     if ($rows)
     {
@@ -65,24 +64,7 @@
         }
     }
     echo "</table>";
-       /* $ind++;
-        $editas = "<a href='edit.php?edit=$row[ID]'>edit</a>";
-        $delitas = "<a href='delete.php?del=$row[ID]'>delete</a>";
-        $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
-        echo 
-        "<tr><td class=\"".$class."\">" .$ind. 
-        "</td><td class=\"".$class."\">". $row['name']. 
-        "</td><td class=\"".$class."\">" .$row['surname']. 
-        "</td><td class=\"".$class."\">" .$row['birth_years']. 
-        "</td><td class=\"".$class."\">" .$row['shirt_number'].
-        "</td><td class=\"".$class."\">" . $editas . 
-        "</td><td class=\"".$class."\">" . $delitas .
-        "</td></tr>";
-}
-
-echo "</table>";
-*/
-
 ?>
+
 </body>
 </html>

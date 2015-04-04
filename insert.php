@@ -12,7 +12,6 @@
     $number = !empty($_POST['shirt_number']) ? sprintf("'%s'",$_POST['shirt_number']) : 'null';
 	
     $sql = "INSERT INTO players (name,surname,birth_years,shirt_number) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.")";
-    //die($sql); // INSERT INTO players (name,surname,birth_years,shirt_number) VALUES ('Situation', 'sda', '1959-10-03', '00') 
     if (!$link->query($sql)) 
     {
         die('error: ' . mysql_error());
