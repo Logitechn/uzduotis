@@ -27,22 +27,20 @@
         </tr>
     </table>
     
-    <p><a href="#">Test</a></p>
-    
     <strong class="table">*Būtina įvesti</strong><br>
     <input type="submit" value="Prideti" name="Submit"></form>
     <h2>Krepšininku sąrašas:</h2>
 
 <?php
     require_once('database.php');
-    require_once('functions.php')
+    require_once('functions.php');
     echo "<table id=\"table2\" class=\"playersListTable table\">";
     echo "<tr><th>Eilės nr.</th><th>Krepšininko vardas</th><th>Krepšininko pavardė</th><th>Gimimo data</th><th>Marškineliu numeris</th><th>  </th><th>  </th></tr>";
     
     $ind = 0;
     $i = 0;
-    $editas = " ";
-    $delitas = " ";
+    $edit = " ";
+    $delit = " ";
      
     $rows = getPlayers();
     if ($rows)
@@ -50,8 +48,8 @@
         foreach ($rows as $row)
         {
             $ind++;
-            $editas = "<a href='edit.php?edit=$row[ID]'>edit</a>";
-            $delitas = "<a href='delete.php?del=$row[ID]'>delete</a>";
+            $edit = "<a href='edit.php?edit=$row[ID]'>edit</a>";
+            //$delit = "<input type="button" onclick="ConfirmDelete()" value="Delete!" />";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 
@@ -59,8 +57,8 @@
                 "</td><td class=\"".$class."\">" .$row['surname']. 
                 "</td><td class=\"".$class."\">" .$row['birth_years']. 
                 "</td><td class=\"".$class."\">" .$row['shirt_number'].
-                "</td><td class=\"".$class."\">" . $editas . 
-                "</td><td class=\"".$class."\">" . $delitas .
+                "</td><td class=\"".$class."\">" . $edit . 
+                "</td><td class=\"".$class."\">" . "<input type='button' onclick='ConfirmDelete()' value='DELETE ACCOUNT'>".
                 "</td></tr>";
         }
     }
