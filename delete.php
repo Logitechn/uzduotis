@@ -1,5 +1,5 @@
 <?php 
-	include_once('datebase.php');
+	require_once('database.php');
 	if ( isset($_GET['del']))
     {
 		$ID = $_GET['del'];
@@ -8,4 +8,3 @@
 		header("Location:index.php");
 		die();
 	}
-?>

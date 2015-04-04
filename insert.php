@@ -1,5 +1,5 @@
 <?php
-    include_once('datebase.php');
+    require_once('database.php');
     
     if (empty($_POST['name']) || empty($_POST['surname'])) 
     {
@@ -22,4 +22,3 @@
     }
     
     mysqli_close($link);
-?>

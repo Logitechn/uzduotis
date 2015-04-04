@@ -1,7 +1,7 @@
 <?php
-    define ('DB_NAME', 'www_akademija_task1_aurimas');
+    define ('DB_NAME', 'formos1');
     define ('DB_USER', 'root');
-    define ('DB_PASSWORD', '');
+    define ('DB_PASSWORD', '38933241');
     define ('DB_HOST', 'localhost'); 
 
     $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
@@ -15,20 +15,3 @@
     {
         die('Can\'t use ' . DB_NAME . ' : ' . mysqli_error());
     }
-    
-    function getPlayers()
-    {
-        global $link;
-        $sql= "SELECT * FROM players"; 
-        $query= $link->query($sql);
-        if ($query != false)
-        {
-            $result = array(); 
-            while ( $row = mysqli_fetch_assoc($query) )
-                $result[] = $row;
-            return $result;
-        }
-        return null;
-    }
-?>
-

@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php 
-    include_once('datebase.php');
+    require_once('database.php');
 
     if(isset($_GET['edit']))
     {

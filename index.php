@@ -34,7 +34,8 @@
     <h2>Krepšininku sąrašas:</h2>
 
 <?php
-    require_once('datebase.php');
+    require_once('database.php');
+    require_once('functions.php')
     echo "<table id=\"table2\" class=\"playersListTable table\">";
     echo "<tr><th>Eilės nr.</th><th>Krepšininko vardas</th><th>Krepšininko pavardė</th><th>Gimimo data</th><th>Marškineliu numeris</th><th>  </th><th>  </th></tr>";
     
