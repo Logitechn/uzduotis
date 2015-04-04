@@ -7,4 +7,5 @@
 		header("Location:index.php");
 		die();
 	}
+	echo "nice";
 ?>
