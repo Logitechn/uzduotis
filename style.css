@@ -1,0 +1,16 @@
+table, th, td {
+    border: 2px white;
+}
+th {
+    background-color: #606060;
+    color:  #CCCC33 ;
+}
+table.playersInsert td:hover {
+    background-color: white;
+    color: black;
+}
+ li { list-style-type: none; display: inline; padding:5px; text-align: center;}
+ .playersListTable td:hover{
+	background-color: #480000;
+    color: white;
+}
