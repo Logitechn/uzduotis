@@ -2,10 +2,9 @@
 	include_once('datebase.php');
 	if ( isset($_GET['del'])){
 		$ID = $_GET['del'];
-		$sql = "DELETE FROM players where ID='$ID'";
+		$sql = "DELETE FROM players where ID=".$ID;
 		$res= $link->query($sql) or die("Failed".mysql_error());
 		header("Location:index.php");
 		die();
 	}
-	echo "nice";
 ?>

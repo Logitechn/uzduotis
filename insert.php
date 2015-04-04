@@ -3,7 +3,7 @@ include_once('datebase.php');
 if (empty($_POST['name']) || empty($_POST['surname'])) {
     die('Name and/or surname is required!');
 }
-$nam = $_POST['name'];
+$nam = strip_tags($_POST['name']);
 $surn = $_POST['surname'];
 $birth = !empty($_POST['birth_years']) ? sprintf("'%s'",$_POST['birth_years']) : 'null';
 $number = !empty($_POST['shirt_number']) ? sprintf("'%s'",$_POST['shirt_number']) : 'null';

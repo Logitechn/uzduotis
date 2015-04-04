@@ -9,8 +9,58 @@ table.playersInsert td:hover {
     background-color: white;
     color: black;
 }
- li { list-style-type: none; display: inline; padding:5px; text-align: center;}
- .playersListTable td:hover{
+li {
+	list-style-type: none; 
+	display: inline; 
+	padding:5px; 
+	text-align: center;
+}
+.playersListTable {
+	border: 5px;
+}
+.playersListTable td:hover{
 	background-color: #480000;
     color: white;
 }
+
+.normalbackground { background-color: #009933; }
+.coloredbackground { background-color: #009933 ; }
+
+table {}
+.table {}
+#table1 {}
+#table2 {}
+
+#table1,
+#table2 {
+	/* border: 10px solid red; */
+}
+
+/*
+a {
+	
+}
+
+strong {
+	
+}
+*/
+
+.specTest {
+	background: green;
+}
+
+.specTest {
+	background: black;
+    color: red;
+}
+
+#table2 th,
+#table2 td {
+	background: green;
+}
+
+h1, h2, h4 {
+	color: red;
+}
+

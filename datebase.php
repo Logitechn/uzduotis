@@ -2,9 +2,9 @@
 
 //connect to mysql database
 
-define ('DB_NAME', 'formos1');
+define ('DB_NAME', 'www_akademija_task1_aurimas');
 define ('DB_USER', 'root');
-define ('DB_PASSWORD', '38933241');
+define ('DB_PASSWORD', '');
 define ('DB_HOST', 'localhost'); 
 
 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
@@ -42,7 +42,7 @@ if (!$db_selected){
 //papildomas klausimas: virsutines funkcijos kaip pakoreguoti, kad irgi mestu lentele.
 
 // veikia  sitas radau pavizdi ( http://stackoverflow.com/questions/2209552/php-letting-your-own-function-work-with-a-while-loop )
-function player(&$ID, &$name, &$surname, &$birth_years, &$shirt_number)
+function getPlayers()
 {
 	global $link;
     $sql= "SELECT * FROM players"; //WHERE WHERE ID=".$ID." and name=".$name." and 
@@ -55,9 +55,11 @@ function player(&$ID, &$name, &$surname, &$birth_years, &$shirt_number)
             $result[] = $row;
         return $result;
     }
-
-    return false;
+    return null;
 }
+
+// SELECT * FROM players WHERE name = 'Test' ORDER BY birth_years DESC;
+
 /*function table_show_data(){
 	$ind = 0;
 	$i = 0;

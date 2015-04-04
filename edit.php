@@ -2,6 +2,7 @@
 <html>
 <head>
 <title> Krepšininkų redagavimas</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 </head>
 <body>
 <?php 
@@ -9,8 +10,8 @@ include_once('datebase.php');
 
 if(isset($_GET['edit'])){
 	$ID = $_GET['edit'];
-	//$res =$link>query ("SELECT * FROM players where ID='$ID'");
-	//$row = mysqli_fetch_array($res);
+	$res =$link->query("SELECT * FROM players where ID=".$ID);
+	$row = mysqli_fetch_array($res);
 }
 
 	if(isset($_POST['newname'])){
