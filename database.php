@@ -2,22 +2,24 @@
 
 //connect to mysql database
 
-define ('DB_NAME', 'www_akademija_task1_aurimas');
-define ('DB_USER', 'root');
-define ('DB_PASSWORD', '');
-define ('DB_HOST', 'localhost'); 
+    define ('DB_NAME', 'www_akademija_task1_aurimas');
+    define ('DB_USER', 'root');
+    define ('DB_PASSWORD', '');
+    define ('DB_HOST', 'localhost'); 
 
-$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+    $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
-if (!$link){
-	die('Could not connect: ' . mysql_error());
-}
+    if (!$link)
+    {
+        die('Could not connect: ' . mysql_error());
+    }
 
-$db_selected = mysqli_select_db($link, DB_NAME);
+    $db_selected = mysqli_select_db($link, DB_NAME);
 
-if (!$db_selected){
-	die('Can\'t use ' . DB_NAME . ' : ' . mysqli_error());
-}
+    if (!$db_selected)
+    {
+        die('Can\'t use ' . DB_NAME . ' : ' . mysqli_error());
+    }
 //$sql="SELECT * FROM players"; // Taip niekada nedarytk, nes kiekvieną kartą kai šis failas bus includintas į kokį kitą faile, tai automatiškai šis sakinus bus paleidžiamas vykdymui.
 
 //$records=$link->query($sql);
@@ -42,21 +44,21 @@ if (!$db_selected){
 //papildomas klausimas: virsutines funkcijos kaip pakoreguoti, kad irgi mestu lentele.
 
 // veikia  sitas radau pavizdi ( http://stackoverflow.com/questions/2209552/php-letting-your-own-function-work-with-a-while-loop )
-function getPlayers()
-{
-	global $link;
-    $sql= "SELECT * FROM players"; //WHERE WHERE ID=".$ID." and name=".$name." and 
-	//surname=".$surname." and birth_years=".$birth_years." and shirt_number=".$shirt_number." ";
-    $query= $link->query($sql);
-    if ($query != false)
+    function getPlayers()
     {
-        $result = array(); 
-        while ( $row = mysqli_fetch_assoc($query) )
-            $result[] = $row;
-        return $result;
+        global $link;
+        $sql= "SELECT * FROM players"; //WHERE WHERE ID=".$ID." and name=".$name." and 
+        //surname=".$surname." and birth_years=".$birth_years." and shirt_number=".$shirt_number." ";
+        $query= $link->query($sql);
+        if ($query != false)
+        {
+            $result = array(); 
+            while ( $row = mysqli_fetch_assoc($query) )
+                $result[] = $row;
+            return $result;
+        }
+        return null;
     }
-    return null;
-}
 
 // SELECT * FROM players WHERE name = 'Test' ORDER BY birth_years DESC;
 
