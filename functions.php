@@ -30,10 +30,3 @@
                 }
                 return null;
     }
-    /*function get_player_by_id($player_id) 
-	{
-        global $link;
-		$properties_array = array("name", "surname", "birth_years", "shirt_number");
-		$player_data = $link->query(SELECT * FROM players);
-		return $player_data;
-	}*/

@@ -47,11 +47,11 @@
     <table>
     <tr>
         <td>Krepšininko vardas:  </td>
-        <td><input type="text" name="newname" value="<?php echo $rows[1] ; ?>"></td>
+        <td><input type="text" name="newname" value="<?php echo $rows['name'] ; ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko pavardė:  </td>
-        <td><input type="text" name="newsurname" value="<?php echo $row['name']; ?>"></td>
+        <td><input type="text" name="newsurname" value="<?php echo $row['surname']; ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko gimimo data:  </td>
