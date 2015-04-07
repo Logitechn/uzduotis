@@ -34,7 +34,7 @@
 <?php
     require_once('database.php');
     require_once('functions.php');
-    echo "<table id=\"table2\" class=\"playersListTable table\">";
+    echo "<table id=\"table2\" class=\"PlayersListTable table\">";
     echo "<tr><th>Eilės nr.</th><th>Krepšininko vardas</th><th>Krepšininko pavardė</th><th>Gimimo data</th><th>Marškineliu numeris</th><th>  </th><th>  </th></tr>";
     
     $ind = 0;
@@ -49,7 +49,7 @@
         {
             $ind++;
             $edit = "<a href='edit.php?edit=$row[ID]'>edit</a>";
-            //$delit = "<input type="button" onclick="ConfirmDelete()" value="Delete!" />";
+            $delit = "<a href='delete.php?del=$row[ID]'>delete</a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 
@@ -58,7 +58,7 @@
                 "</td><td class=\"".$class."\">" .$row['birth_years']. 
                 "</td><td class=\"".$class."\">" .$row['shirt_number'].
                 "</td><td class=\"".$class."\">" . $edit . 
-                "</td><td class=\"".$class."\">" . "<input type='button' onclick='ConfirmDelete()' value='DELETE ACCOUNT'>".
+                "</td><td class=\"".$class."\">" . $delit.             
                 "</td></tr>";
         }
     }

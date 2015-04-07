@@ -13,24 +13,27 @@
             }
             return null;
     }
-    function getPlayerstoEdit()
-    {
+    function getPlayertoEdit()
+    {   
             global $link;
-            $sql= "SELECT * FROM players"; 
-            $query= $link->query($sql);
-            if(isset($_GET['edit']))
-            {
-                $ID = $_GET['edit'];
-                $res =$link->query("SELECT * FROM players where ID=".$ID);
-                $row = mysqli_fetch_array($res);
-            }
-            
+            global $ID;
+            $res= $link->query("SELECT * FROM players where ID=".$ID);
+                if ($res != false)
+                {
+                    if ($_GET['id'] == $ID)
+                    {   
+                        $result = array(); 
+                        while ( $row = mysqli_fetch_array($res) )
+                            $result[] = $row;
+                        return $result;
+                    }
+                }
+                return null;
     }
-?>
-<script type="text/javascript">
-      function ConfirmDelete()
-      {
-            if (confirm("Ar tikrai istrinti?"))
-                 location.href='delete.php?del=$row[ID];
-      }
-</script>
+    /*function get_player_by_id($player_id) 
+	{
+        global $link;
+		$properties_array = array("name", "surname", "birth_years", "shirt_number");
+		$player_data = $link->query(SELECT * FROM players);
+		return $player_data;
+	}*/

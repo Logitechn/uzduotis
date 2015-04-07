@@ -7,13 +7,26 @@
 <body>
 <?php 
     require_once('database.php');
-    //require_once('functions.php');
-    //getPlayerstoEdit();
+    require_once('functions.php');
+    
+    //$row = getPlayertoEdit();
     if(isset($_GET['edit']))
     {
         $ID = $_GET['edit'];
-        $res =$link->query("SELECT * FROM players where ID=".$ID);
-        $row = mysqli_fetch_array($res);
+        $rows = getPlayertoEdit();
+        /*if ($rowse)
+        {
+            foreach ($rowse as $rows)
+                if($_GET('ID') == '$ID')
+                {
+                    $playerName = $rows['column1'];
+                    //$playerSurname = $_GET('surname');
+                    //$playerBirth = $_GET('birth_years');
+                    //$playerShirt = $_GET('shirt_number');
+                }                
+            
+        }*/    
+        
     }
  
 	if(isset($_POST['newname']))
@@ -34,11 +47,11 @@
     <table>
     <tr>
         <td>Krepšininko vardas:  </td>
-        <td><input type="text" name="newname" value="<?php echo $row[1]; ?>"></td>
+        <td><input type="text" name="newname" value="<?php echo $rows[1] ; ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko pavardė:  </td>
-        <td><input type="text" name="newsurname" value="<?php echo $row[2]; ?>"></td>
+        <td><input type="text" name="newsurname" value="<?php echo $row['name']; ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko gimimo data:  </td>
@@ -50,7 +63,7 @@
     </tr>
     </table>
     
-    <input type="hidden" name="ID" value="<?php echo $row[0]; ?>">
+    <input type="text" name="ID" value="<?php echo $ID; ?>">
     <input type="submit" value="Redagavimas" />
     </form>
 </body>
