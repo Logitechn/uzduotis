@@ -7,13 +7,21 @@
 <body>
 <?php 
     require_once('database.php');
-    require_once('functions.php');
+    include_once('functions.php');
     
-    //$row = getPlayertoEdit();
+    //$rows = array();
     if(isset($_GET['edit']))
     {
         $ID = $_GET['edit'];
-        $rows = getPlayertoEdit();
+        getPlayertoEditname();
+        getPlayertoEditsurname();
+        getPlayertoEditbirth_years();
+        getPlayertoEditshirt_number();
+        /*$rows[] = getPlayertoEdit();
+        $playerName = $rows['name'];
+        $playerSurname = $rows[2];
+        $playerBirth = $rows[3];
+        $playerShirt = $rows[4];*/
         /*if ($rowse)
         {
             foreach ($rowse as $rows)
@@ -47,23 +55,23 @@
     <table>
     <tr>
         <td>Krepšininko vardas:  </td>
-        <td><input type="text" name="newname" value="<?php echo $rows['name'] ; ?>"></td>
+        <td><input type="text" name="newname" value="<?php echo getPlayertoEditname('.$playerName.'); ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko pavardė:  </td>
-        <td><input type="text" name="newsurname" value="<?php echo $row['surname']; ?>"></td>
+        <td><input type="text" name="newsurname" value="<?php echo getPlayertoEditsurname('.$playerSurname.'); ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko gimimo data:  </td>
-        <td><input type="text" name="newyears" value="<?php echo $row[3]; ?>"></td>
+        <td><input type="text" name="newyears" value="<?php echo getPlayertoEditbirth_years('.$playerBirth.'); ?>"></td>
     </tr>
     <tr>
         <td>Marškinėliu numeris:  </td>
-        <td><input type="text" name="newshirtnumber" value="<?php echo $row[4]; ?>"></td>
+        <td><input type="text" name="newshirtnumber" value="<?php echo getPlayertoEditshirt_number('.$playerShirt.'); ?>"></td>
     </tr>
     </table>
     
-    <input type="text" name="ID" value="<?php echo $ID; ?>">
+    <input type="hidden" name="ID" value="<?php echo $ID; ?>">
     <input type="submit" value="Redagavimas" />
     </form>
 </body>
