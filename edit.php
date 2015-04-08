@@ -7,15 +7,12 @@
 <body>
 <?php 
     require_once('database.php');
-    include_once('functions.php');
+    require_once('functions.php');
     
     if(isset($_GET['edit']))
     {
         $ID = $_GET['edit'];
-        getPlayertoEditname();
-        getPlayertoEditsurname();
-        getPlayertoEditbirth_years();
-        getPlayertoEditshirt_number();        
+        list($playerName, $playerSurname, $playerBirth, $playerShirt) = getPlayerbyID();       
     }
  
 	if(isset($_POST['newname']))
@@ -36,19 +33,19 @@
     <table>
     <tr>
         <td>Krepšininko vardas:  </td>
-        <td><input type="text" name="newname" value="<?php echo getPlayertoEditname('.$playerName.'); ?>"></td>
+        <td><input type="text" name="newname" value="<?php echo $playerName; ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko pavardė:  </td>
-        <td><input type="text" name="newsurname" value="<?php echo getPlayertoEditsurname('.$playerSurname.'); ?>"></td>
+        <td><input type="text" name="newsurname" value="<?php echo $playerSurname; ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko gimimo data:  </td>
-        <td><input type="text" name="newyears" value="<?php echo getPlayertoEditbirth_years('.$playerBirth.'); ?>"></td>
+        <td><input type="text" name="newyears" value="<?php echo $playerBirth; ?>"></td>
     </tr>
     <tr>
         <td>Marškinėliu numeris:  </td>
-        <td><input type="text" name="newshirtnumber" value="<?php echo getPlayertoEditshirt_number('.$playerShirt.'); ?>"></td>
+        <td><input type="text" name="newshirtnumber" value="<?php echo $playerShirt; ?>"></td>
     </tr>
     </table>
     
