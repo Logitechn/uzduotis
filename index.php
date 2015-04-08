@@ -27,12 +27,11 @@
         </tr>
     </table>
     
-    <strong class="table">*Būtina įvesti</strong><br>
+    <strong class="table"><h3>*Būtina įvesti</h3></strong><br>
     <input type="submit" value="Prideti" name="Submit"></form>
     <h2>Krepšininku sąrašas:</h2>
 
 <?php
-    $error_descriptions[E_WARNING] = "PHP issued a warning";
     require_once('database.php');
     require_once('functions.php');
     echo "<table id=\"table2\" class=\"PlayersListTable table\">";

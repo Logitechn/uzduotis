@@ -12,7 +12,7 @@
     if(isset($_GET['edit']))
     {
         $ID = $_GET['edit'];
-        list($playerName, $playerSurname, $playerBirth, $playerShirt) = getPlayerbyID();       
+        list($playerName, $playerSurname, $playerBirth, $playerShirt) = getPlayerbyID($ID);       
     }
  
 	if(isset($_POST['newname']))
