@@ -18,5 +18,6 @@
             global $link;
             $res= $link->query("SELECT name, surname, birth_years, shirt_number FROM players where ID=".$ID);
             $row = mysqli_fetch_array($res);
-            return array($row['name'], $row['surname'], $row['birth_years'], $row['shirt_number']);
+            return array('name' => $row['name'],'surname' => $row['surname'],
+            'birth_years' => $row['birth_years'],'shirt_number' => $row['shirt_number']);
     }

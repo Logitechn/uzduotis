@@ -12,7 +12,7 @@
     if(isset($_GET['edit']))
     {
         $ID = $_GET['edit'];
-        list($playerName, $playerSurname, $playerBirth, $playerShirt) = getPlayerbyID($ID);       
+        $playerbyID = getPlayerbyID($ID);       
     }
  
 	if(isset($_POST['newname']))
@@ -33,19 +33,19 @@
     <table>
     <tr>
         <td>Krepšininko vardas:  </td>
-        <td><input type="text" name="newname" value="<?php echo $playerName; ?>"></td>
+        <td><input type="text" name="newname" value="<?php echo $playerbyID['name']; ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko pavardė:  </td>
-        <td><input type="text" name="newsurname" value="<?php echo $playerSurname; ?>"></td>
+        <td><input type="text" name="newsurname" value="<?php echo $playerbyID['surname']; ?>"></td>
     </tr>
     <tr>
         <td>Krepšininko gimimo data:  </td>
-        <td><input type="text" name="newyears" value="<?php echo $playerBirth; ?>"></td>
+        <td><input type="text" name="newyears" value="<?php echo $playerbyID['birth_years']; ?>"></td>
     </tr>
     <tr>
         <td>Marškinėliu numeris:  </td>
-        <td><input type="text" name="newshirtnumber" value="<?php echo $playerShirt; ?>"></td>
+        <td><input type="text" name="newshirtnumber" value="<?php echo $playerbyID['shirt_number']; ?>"></td>
     </tr>
     </table>
     
