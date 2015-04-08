@@ -23,25 +23,25 @@ li {
 }
 .PlayersListTable {
 	margin:0px;padding:0px;
-	width:100%;
+	width:100px;
 	box-shadow: 10px 10px 5px #888888;
-	border:1px solid #e5e5e5;
+	border:1px solid #7f7f7f;
 	
-	-moz-border-radius-bottomleft:13px;
-	-webkit-border-bottom-left-radius:13px;
-	border-bottom-left-radius:13px;
+	-moz-border-radius-bottomleft:17px;
+	-webkit-border-bottom-left-radius:17px;
+	border-bottom-left-radius:17px;
 	
-	-moz-border-radius-bottomright:13px;
-	-webkit-border-bottom-right-radius:13px;
-	border-bottom-right-radius:13px;
+	-moz-border-radius-bottomright:17px;
+	-webkit-border-bottom-right-radius:17px;
+	border-bottom-right-radius:17px;
 	
-	-moz-border-radius-topright:13px;
-	-webkit-border-top-right-radius:13px;
-	border-top-right-radius:13px;
+	-moz-border-radius-topright:17px;
+	-webkit-border-top-right-radius:17px;
+	border-top-right-radius:17px;
 	
-	-moz-border-radius-topleft:13px;
-	-webkit-border-top-left-radius:13px;
-	border-top-left-radius:13px;
+	-moz-border-radius-topleft:17px;
+	-webkit-border-top-left-radius:17px;
+	border-top-left-radius:17px;
 }.PlayersListTable table{
     border-collapse: collapse;
         border-spacing: 0;
@@ -49,23 +49,23 @@ li {
 	height:100%;
 	margin:0px;padding:0px;
 }.PlayersListTable tr:last-child td:last-child {
-	-moz-border-radius-bottomright:13px;
-	-webkit-border-bottom-right-radius:13px;
-	border-bottom-right-radius:13px;
+	-moz-border-radius-bottomright:17px;
+	-webkit-border-bottom-right-radius:17px;
+	border-bottom-right-radius:17px;
 }
 .PlayersListTable table tr:first-child td:first-child {
-	-moz-border-radius-topleft:13px;
-	-webkit-border-top-left-radius:13px;
-	border-top-left-radius:13px;
+	-moz-border-radius-topleft:17px;
+	-webkit-border-top-left-radius:17px;
+	border-top-left-radius:17px;
 }
 .PlayersListTable table tr:first-child td:last-child {
-	-moz-border-radius-topright:13px;
-	-webkit-border-top-right-radius:13px;
-	border-top-right-radius:13px;
+	-moz-border-radius-topright:17px;
+	-webkit-border-top-right-radius:17px;
+	border-top-right-radius:17px;
 }.PlayersListTable tr:last-child td:first-child{
-	-moz-border-radius-bottomleft:13px;
-	-webkit-border-bottom-left-radius:13px;
-	border-bottom-left-radius:13px;
+	-moz-border-radius-bottomleft:17px;
+	-webkit-border-bottom-left-radius:17px;
+	border-bottom-left-radius:17px;
 }.PlayersListTable tr:hover td{
 	background-color:#ff7f00;
 		
@@ -76,10 +76,10 @@ li {
 	
 	background-color:#ffffff;
 
-	border:1px solid #e5e5e5;
+	border:1px solid #7f7f7f;
 	border-width:0px 1px 1px 0px;
 	text-align:center;
-	padding:8px;
+	padding:14px;
 	font-size:10px;
 	font-family:Comic Sans MS;
 	font-weight:normal;
@@ -97,7 +97,7 @@ li {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#7f0000");	background: -o-linear-gradient(top,#ff0000,7f0000);
 
 	background-color:#ff0000;
-	border:0px solid #e5e5e5;
+	border:0px solid #7f7f7f;
 	text-align:center;
 	border-width:0px 0px 1px 1px;
 	font-size:10px;
@@ -118,11 +118,6 @@ li {
 .PlayersListTable tr:first-child td:last-child{
 	border-width:0px 0px 1px 1px;
 }
-	border-width:0px 0px 1px 1px;
-}
-	border-width:0px 0px 1px 1px;
-}
-
 	border-width:0px 0px 1px 1px;
 }
 

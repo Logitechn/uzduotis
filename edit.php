@@ -9,32 +9,13 @@
     require_once('database.php');
     include_once('functions.php');
     
-    //$rows = array();
     if(isset($_GET['edit']))
     {
         $ID = $_GET['edit'];
         getPlayertoEditname();
         getPlayertoEditsurname();
         getPlayertoEditbirth_years();
-        getPlayertoEditshirt_number();
-        /*$rows[] = getPlayertoEdit();
-        $playerName = $rows['name'];
-        $playerSurname = $rows[2];
-        $playerBirth = $rows[3];
-        $playerShirt = $rows[4];*/
-        /*if ($rowse)
-        {
-            foreach ($rowse as $rows)
-                if($_GET('ID') == '$ID')
-                {
-                    $playerName = $rows['column1'];
-                    //$playerSurname = $_GET('surname');
-                    //$playerBirth = $_GET('birth_years');
-                    //$playerShirt = $_GET('shirt_number');
-                }                
-            
-        }*/    
-        
+        getPlayertoEditshirt_number();        
     }
  
 	if(isset($_POST['newname']))
