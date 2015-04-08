@@ -32,6 +32,7 @@
     <h2>Krepšininku sąrašas:</h2>
 
 <?php
+    $error_descriptions[E_WARNING] = "PHP issued a warning";
     require_once('database.php');
     require_once('functions.php');
     echo "<table id=\"table2\" class=\"PlayersListTable table\">";
@@ -48,7 +49,7 @@
         foreach ($rows as $row)
         {
             $ind++;
-            $edit = "<a href='edit.php?edit=$row[ID]'>edit</a>";
+            $edit = "<a href=edit.php?edit=".$row['ID']">edit</a>";
             $delit = "<a href='delete.php?del=$row[ID]'>delete</a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             echo 
@@ -57,7 +58,7 @@
                 "</td><td class=\"".$class."\">" .$row['surname']. 
                 "</td><td class=\"".$class."\">" .$row['birth_years']. 
                 "</td><td class=\"".$class."\">" .$row['shirt_number'].
-                "</td><td class=\"".$class."\">" . $edit . 
+                "</td><td class=\"".$class."\">" . $edit. 
                 "</td><td class=\"".$class."\">" . $delit.             
                 "</td></tr>";
         }

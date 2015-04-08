@@ -19,7 +19,7 @@
             global $ID;
             $res= $link->query("SELECT name, surname, birth_years, shirt_number FROM players where ID=".$ID);
             $row = mysqli_fetch_array($res);
-            $playerName = $row['name'];
+            $playerName = $row["name"];
             /*$playerSurname = $row['surname'];
             $playerBirth = $row['birth_years'];
             $playerShirt = $row['shirt_number'];*/
@@ -34,7 +34,7 @@
             global $ID;
             $res= $link->query("SELECT surname FROM players where ID=".$ID);
             $row = mysqli_fetch_array($res);
-            $playerSurname = $row['surname'];
+            $playerSurname = $row["surname"];
             return $playerSurname;
     }
     function getPlayertoEditbirth_years()
@@ -43,7 +43,7 @@
             global $ID;
             $res= $link->query("SELECT birth_years FROM players where ID=".$ID);
             $row = mysqli_fetch_array($res);
-            $playerBirth = $row['birth_years'];
+            $playerBirth = $row["birth_years"];
             return $playerBirth;
     }
     function getPlayertoEditshirt_number()
@@ -52,6 +52,6 @@
             global $ID;
             $res= $link->query("SELECT shirt_number FROM players where ID=".$ID);
             $row = mysqli_fetch_array($res);
-            $playerShirt = $row['shirt_number'];
+            $playerShirt = $row["shirt_number"];
             return $playerShirt;
     }
