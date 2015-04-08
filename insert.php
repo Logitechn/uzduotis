@@ -5,9 +5,13 @@
     {
         die('Name and/or surname is required!');
     }
-    if (!is_numeric($_POST['shirt_number']) || $_POST['shirt_number'] <= 0)
+    if (!empty($_POST['shirt_number']))
     {
-        die('Shirt number must be positive and integer number!');
+        if (!is_numeric($_POST['shirt_number']) || $_POST['shirt_number'] <= 0)
+        {
+            die('Shirt number must be positive and integer number!');
+        }
+        
     }
     
     $nam = strip_tags($_POST['name']);
