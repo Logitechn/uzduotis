@@ -1,17 +1,22 @@
 <?php
-    define ('DB_NAME', 'formos1');
+    require_once('functions.php');
+    $database = encryptIt('formos1');
+    $username = encryptIt('root');
+    $password = encryptIt('38933241');
+    $host = encryptIt('localhost');
+    /*define ('DB_NAME', 'formos1');
     define ('DB_USER', 'root');
-    define ('DB_PASSWORD', '38933241');
-    define ('DB_HOST', 'localhost'); 
+    define ('DB_PASSWORD', '38933241');//vp2K2Nj5p4HxCfdw
+    define ('DB_HOST', 'localhost'); */
 
-    $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
+    $link = new mysqli(decryptIt($host), decryptIt($username), decryptIt($password), decryptIt($database));
     if (!$link)
     {
         die('Could not connect: ' . mysql_error());
     }
 
-    $db_selected = mysqli_select_db($link, DB_NAME);
+    $db_selected = mysqli_select_db($link, decryptIt($database));
     if (!$db_selected)
     {
-        die('Can\'t use ' . DB_NAME . ' : ' . mysqli_error());
+        die('Can\'t use ' . decryptIt($database) . ' : ' . mysqli_error());
     }
