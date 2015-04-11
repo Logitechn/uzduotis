@@ -17,10 +17,10 @@
  
 	if(isset($_POST['newname']))
     {
-		$newname = strip_tags($_POST['newname']);
-		$newsurname = strip_tags($_POST['newsurname']);
-		$newbirth_years = strip_tags($_POST['newyears']);
-		$newshirt_number = strip_tags($_POST['newshirtnumber']);
+		$newname = mysqli_real_escape_string($link, strip_tags($_POST['newname']));
+		$newsurname = mysqli_real_escape_string($link, strip_tags($_POST['newsurname']));
+		$newbirth_years = mysqli_real_escape_string($link, strip_tags($_POST['newyears']));
+		$newshirt_number = mysqli_real_escape_string($link, strip_tags($_POST['newshirtnumber']));
 		$ID 	   = $_POST['ID'];
 		$sql       = "UPDATE players SET name='$newname', surname='$newsurname',
 						birth_years='$newbirth_years', shirt_number='$newshirt_number' where ID='$ID'";

@@ -10,9 +10,9 @@
     define ('DB_HOST', 'localhost'); */
 
     $link = new mysqli(decryptIt($host), decryptIt($username), decryptIt($password), decryptIt($database));
-    if (!$link)
+    if (mysqli_connect_errno())
     {
-        die('Could not connect: ' . mysql_error());
+        die('Could not connect: ' . mysqli_connect_error());
     }
 
     $db_selected = mysqli_select_db($link, decryptIt($database));
