@@ -7,7 +7,7 @@
     }
     if (!empty($_POST['shirt_number']))
     {
-        if (!is_numeric($_POST['shirt_number']) || $_POST['shirt_number'] <= 0)
+        if (!is_numeric($_POST['shirt_number']) || $_POST['shirt_number'] < 0)
         {
             die('Shirt number must be positive and integer number!');
         }
