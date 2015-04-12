@@ -1,8 +1,8 @@
 <?php
     require_once('functions.php');
     $database = encryptIt('formos1');
-    $username = encryptIt('root');
-    $password = encryptIt('38933241');
+    $username = encryptIt('logis');
+    $password = encryptIt('YmYaeStUYQ7PLN3A');
     $host = encryptIt('localhost');
 
     $link = new mysqli(decryptIt($host), decryptIt($username), decryptIt($password), decryptIt($database));
