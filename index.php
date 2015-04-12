@@ -49,7 +49,7 @@
         {
             $ind++;
             $edit = "<a href='edit.php?edit={$row['ID']}'>edit</a>";
-            $delit = "<a href='delete.php?del={$row['ID']}'>delete</a>";
+            $delit = "<a onClick=\"javascript: return confirm('Please confirm deletion');\" href='delete.php?del={$row['ID']}'>delete</a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 

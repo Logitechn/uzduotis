@@ -34,7 +34,7 @@
             $sql = "UPDATE players SET name='$newname', surname='$newsurname',
                 birth_years='$newbirth_years', shirt_number='$newshirt_number' where ID='$ID'";
         }
-		$res 	   = $link->query($sql) or die("Could not update".mysql_error());
+		$result = $link->query($sql) or die("Could not update".mysql_error());
 		header("Location:index.php");
 		die();
 	}

@@ -19,18 +19,11 @@
     $birth = strip_tags(!empty(mysqli_real_escape_string($link, $_POST['birth_years'])) ? sprintf("'%s'",$_POST['birth_years']) : 'null');
     $number = strip_tags(!empty(mysqli_real_escape_string($link, $_POST['shirt_number'])) ? sprintf("'%s'",$_POST['shirt_number']) : 'null');
     
-    //$stmt = mysqli_prepare($link, "INSERT INTO players name=?"." and surname=?". "birth_years=?". "shirt_number=?");
-    $sql = "INSERT INTO players (name,surname,birth_years) VALUES(?,?,?)";
-    //$stmt = mysqli_prepare($link, $sql);
-    //$sql = "INSERT INTO players (name,surname,birth_years,shirt_number) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.")";
-    $stmt = $link->prepare($sql);
-    $stmt->bind_param('sss', $nam, $surn, $birth);   
-    //mysqli_stmt_bind_param($stmt, "sssd", $name, $surname, $birth_years, $shirt_number);
-    //mysqli_stmt_execute($stmt);
-    $stmt->execute();
-    //$stmt->fetch();
-    $stmt->close();
-    //mysqli_stmt_close($stmt);
+    $sql = "INSERT INTO players (name,surname,birth_years,shirt_number) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.")";
+    if (!$link->query($sql)) 
+    {
+         die('error: ' . mysql_error());
+    }else{
+        header("Location:index.php"); 
+    }
     $link->close();
-    //mysqli_close($link);
-    header("Location:index.php"); 
