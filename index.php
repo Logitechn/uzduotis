@@ -28,7 +28,7 @@
     </table>
     
     <strong class="table"><h3>*Būtina įvesti</h3></strong><br>
-    <input type="submit" value="Prideti" name="Submit"></form>
+    <input type="image" src="image/save.png" alt="Submit"></form>
     <h2>Krepšininku sąrašas:</h2>
 
 <?php
@@ -48,8 +48,8 @@
         foreach ($rows as $row)
         {
             $ind++;
-            $edit = "<a href='edit.php?edit={$row['ID']}'>edit</a>";
-            $delit = "<a onClick=\"javascript: return confirm('Please confirm deletion');\" href='delete.php?del={$row['ID']}'>delete</a>";
+            $edit = "<a href='edit.php?edit={$row['ID']}'><img src='image/edit.png'></a>";
+            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite ištrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 

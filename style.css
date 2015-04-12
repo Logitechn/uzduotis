@@ -126,5 +126,5 @@ li {
 .normalbackground { background-color: #009933; }
 .coloredbackground { background-color: #009933 ; }
 body {
-    background-image: url("http://i.imgur.com/5brbOi6.jpg");
+    background-image: url(image/background.jpg);
 }
