@@ -13,7 +13,7 @@
     
     if(isset($_GET['edit']))
     {
-        $ID = $_GET['edit'];
+        $ID = mysqli_real_escape_string($link, $_GET['edit']);
         $playerbyID = getPlayerbyID($ID);       
     }
  
@@ -23,7 +23,7 @@
         $newsurname = mysqli_real_escape_string($link, strip_tags($_POST['newsurname']));
         $newbirth_years = mysqli_real_escape_string($link, strip_tags($_POST['newyears']));
         $newshirt_number = mysqli_real_escape_string($link, strip_tags($_POST['newshirtnumber']));		
-        $ID = $_POST['ID'];
+        $ID = mysqli_real_escape_string($link, $_POST['ID']);
         if($newname == NULL || $newsurname == NULL){
             die('Name and/or surname is required!');           
         }elseif($newbirth_years == NULL){
