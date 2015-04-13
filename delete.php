@@ -4,7 +4,7 @@
     {
         $ID = $_GET['del'];
         $sql = "DELETE FROM players where ID=".$ID;
-        $result= $link->query($sql) or die("Failed".mysql_error());
+        $result= $link->query($sql) or die("Failed".mysqli_error());
         header("Location:index.php");
         die();
     }
