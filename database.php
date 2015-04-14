@@ -1,18 +1,17 @@
 <?php
-    require_once('functions.php');
-    $database = encryptIt('formos1');
-    $username = encryptIt('logis');
-    $password = encryptIt('YmYaeStUYQ7PLN3A');
-    $host = encryptIt('localhost');
+    $database = 'formos1';
+    $username = 'logis';
+    $password = 'YmYaeStUYQ7PLN3A';
+    $host = 'localhost';
 
-    $link = new mysqli(decryptIt($host), decryptIt($username), decryptIt($password), decryptIt($database));
+    $link = new mysqli($host, $username, $password, $database);
     if (mysqli_connect_errno())
     {
         die('Could not connect: ' . mysqli_connect_error());
     }
 
-    $db_selected = mysqli_select_db($link, decryptIt($database));
+    $db_selected = mysqli_select_db($link, $database);
     if (!$db_selected)
     {
-        die('Can\'t use ' . decryptIt($database) . ' : ' . mysqli_error());
+        die('Can\'t use ' . $database . ' : ' . mysqli_error());
     }
