@@ -22,7 +22,7 @@
     $sql = "INSERT INTO players (name,surname,birth_years,shirt_number) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.")";
     if (!$link->query($sql)) 
     {
-         die('error: ' . mysqli_error());
+         die('error: ' . mysqli_error($link));
     }else{
         header("Location:index.php"); 
     }
