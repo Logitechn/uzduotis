@@ -13,5 +13,5 @@
     $db_selected = mysqli_select_db($link, $database);
     if (!$db_selected)
     {
-        die('Can\'t use ' . $database . ' : ' . mysqli_error());
+        die('Can\'t use ' . $database . ' : ' . mysqli_error($link));
     }

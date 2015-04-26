@@ -13,7 +13,7 @@
         }
         
     }
-  
+    $number = 0;
     $nam = mysqli_real_escape_string($link, strip_tags($_POST['name']));
     $surn = mysqli_real_escape_string($link, strip_tags($_POST['surname']));
     $birth = strip_tags(!empty(mysqli_real_escape_string($link, $_POST['birth_years'])) ? sprintf("'%s'",$_POST['birth_years']) : 'null');
