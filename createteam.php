@@ -41,7 +41,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Krepðininku registravimas</title>
+    <title>Komandos registravimas</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/lib/control/iconselect.css" >
@@ -65,7 +65,7 @@
     </ul>
     </div>
         <form action="insertteam.php" method="post">
-    <h3><strong class="errorText specTest">Krepðinio þaidëju registravimo forma:</strong></h3>
+    <h3><strong class="errorText specTest">Krepðinio komandu registravimo forma:</strong></h3>
     <table id="table1" class="playersInsert">
         <tr>
             <td>Komandos pavadinimas*:</td>
@@ -77,9 +77,8 @@
         </tr>
         <tr>
             <td>Komandos logotipas*:</td>
-            <td><div id="my-icon-select" ></div></td>
-            
-            
+            <td><div id="my-icon-select"></div></td>
+            <td><input type="hidden" id="selected-text" name="logo"></td>
         </tr>
     </table>
     
