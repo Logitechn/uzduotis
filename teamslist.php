@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Komandu sàraðas</title>
+    <title>Komandu sÄ…raÅ¡as</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 </head>
@@ -23,13 +23,13 @@
        </li>
     </ul>
     </div>
-        <h2>Komandu sàraðas:</h2>
+        <h2>Komandu sÄ…raÅ¡as:</h2>
 
 <?php
     require_once('database.php');
     require_once('functions.php');
     echo "<table id=\"table2\" class=\"PlayersListTable table\">";
-    echo "<tr><th>Eilës nr.</th><th>Komandu pavadinimai</th><th>Komandu miestai</th><th>Komandu logotipai</th><th>  </th><th>  </th></tr>";
+    echo "<tr><th>EilÄ—s nr.</th><th>Komandu pavadinimai</th><th>Komandu miestai</th><th>Komandu logotipai</th><th>  </th><th>  </th></tr>";
     
     $ind = 0;
     $i = 0;
@@ -43,8 +43,8 @@
         {
             $ind++;
             $edit = "<a href='editteam.php?edit={$row['ID']}'><img src='image/edit.png'></a>";
-            //$delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite iðtrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>";
-            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite iðtrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>";
+            //$delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite iÅ¡trynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>";
+            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite iÅ¡trynti?');\" href='deleteteam.php?del={$row['ID']}'><img src='image/delete.png'></a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             if ($row['logo'] == 1){
                 $picture = "<img src='images/icons/1.png'>";
@@ -73,9 +73,10 @@
                 "<tr><td class=\"".$class."\">" .$ind. 
                 "</td><td class=\"".$class."\">". $row['name']. 
                 "</td><td class=\"".$class."\">" .$row['city']. 
+                //"</td><td class=\"".$class."\">" .$picture. 
                 "</td><td class=\"".$class."\">" .$picture. 
                 "</td><td class=\"".$class."\">" . $edit. 
-                //"</td><td class=\"".$class."\">" . "<a onClick=\"javascript: return confirm('Ar tikrai norite iðtrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>".             
+                //"</td><td class=\"".$class."\">" . "<a onClick=\"javascript: return confirm('Ar tikrai norite iÅ¡trynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>".             
                 "</td><td class=\"".$class."\">" . $delit.             
                 "</td></tr>";
         }

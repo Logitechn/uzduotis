@@ -42,6 +42,24 @@
             <td>Marškinėliu numeris:</td>
             <td><input type="text" name="shirt_number"></td>
         </tr>
+        <tr>
+            <td>Komanda*:</td>
+            <td><select name="team" class="textfields" >
+                <option id="0">  </option>
+                <?php
+                    require_once('database.php');
+                    require_once('functions.php');
+                    $rows = getTeams();
+                    if ($rows)
+                    {
+                        foreach ($rows as $row)
+                        {
+                ?>
+                        <option id="<?php echo $row['ID']; ?>"><?php echo $row['name']; ?></option>
+                  <?php } ?>
+               <?php } ?>
+            </select></td>
+        </tr>
     </table>
     
     <strong class="table"><h3>*Būtina įvesti</h3></strong><br>

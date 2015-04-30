@@ -1,7 +1,9 @@
 <?php
     $database = 'formos1';
     $username = 'logis';
+    //$username = 'root';
     $password = 'YmYaeStUYQ7PLN3A';
+    //$password = '38933241';
     $host = 'localhost';
 
     $link = new mysqli($host, $username, $password, $database);

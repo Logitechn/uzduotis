@@ -3,8 +3,8 @@
     if ( isset($_GET['del']))
     {
         $ID = mysqli_real_escape_string($link, $_GET['del']);
-        $sql = "DELETE FROM players where ID=".$ID;
+        $sql = "DELETE FROM teams where ID=".$ID;
         $result= $link->query($sql) or die("Failed".mysqli_error($link));
-        header("Location:playerslist.php");
+        header("Location:teamslist.php");
         die();
     }

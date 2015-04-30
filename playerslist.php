@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Krepğininku sàrağas</title>
+    <title>KrepÅ¡ininku sÄ…raÅ¡as</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 </head>
@@ -23,13 +23,13 @@
        </li>
     </ul>
     </div>
-        <h2>Krepğininku sàrağas:</h2>
+        <h2>KrepÅ¡ininku sÄ…raÅ¡as:</h2>
 
 <?php
     require_once('database.php');
     require_once('functions.php');
     echo "<table id=\"table2\" class=\"PlayersListTable table\">";
-    echo "<tr><th>Eilës nr.</th><th>Krepğininko vardas</th><th>Krepğininko pavardë</th><th>Gimimo data</th><th>Marğkineliu numeris</th><th>  </th><th>  </th></tr>";
+    echo "<tr><th>EilÄ—s nr.</th><th>KrepÅ¡ininko vardas</th><th>KrepÅ¡ininko pavardÄ—</th><th>Gimimo data</th><th>MarÅ¡kineliu numeris</th><th>Komanda</th><th>  </th><th>  </th></tr>";
     
     $ind = 0;
     $i = 0;
@@ -43,7 +43,7 @@
         {
             $ind++;
             $edit = "<a href='edit.php?edit={$row['ID']}'><img src='image/edit.png'></a>";
-            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite iğtrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>";
+            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite iÅ¡trynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 
@@ -51,6 +51,7 @@
                 "</td><td class=\"".$class."\">" .$row['surname']. 
                 "</td><td class=\"".$class."\">" .$row['birth_years']. 
                 "</td><td class=\"".$class."\">" .$row['shirt_number'].
+                "</td><td class=\"".$class."\">" .$row['team'].
                 "</td><td class=\"".$class."\">" . $edit. 
                 "</td><td class=\"".$class."\">" . $delit.             
                 "</td></tr>";
