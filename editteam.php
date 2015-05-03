@@ -7,7 +7,6 @@
     <title> Komandos duomenu redagavimas </title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="css/lib/control/iconselect.css" >
 </head>
 <body>
     <div id='cssmenu'>
@@ -35,6 +34,10 @@
     if(isset($_GET['edit']))
     {
         $ID = mysqli_real_escape_string($link, $_GET['edit']);
+        $checkID=$link->query("SELECT team_name, city, logo FROM teams where ID=".$ID) or die(mysqli_error($link));
+        if (!(mysqli_num_rows($checkID))) {
+            die ('Šis ID negaliojantis');
+        }
         $teambyID = getTeamID($ID);       
     }
  
@@ -47,11 +50,11 @@
         if($newname == NULL || $newcity == NULL || $newlogo == NULL){
             die('Name, city or logo is required!');           
         }else{
-            $sql = ("UPDATE teams SET name='$newname', city='$newcity',
+            $sql = ("UPDATE teams SET team_name='$newname', city='$newcity',
                     logo='$newlogo' where ID='$ID'"); 
         }
         $result = $link->query($sql) or die("Could not update".mysqli_error($link));
-        header("Location:index.php");
+        header("Location:teamslist.php");
         die();
     }
 ?>
@@ -59,7 +62,7 @@
     <table id="table1" class="playersInsert">
         <tr>
             <td>Komandos pavadinimas*:  </td>
-            <td><input type="text" name="newname" value="<?php echo $teambyID['name']; ?>"></td>
+            <td><input type="text" name="newname" value="<?php echo $teambyID['team_name']; ?>"></td>
         </tr>
         <tr>
             <td>Komandos miestas*:  </td>

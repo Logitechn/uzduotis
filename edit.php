@@ -32,6 +32,10 @@
     if(isset($_GET['edit']))
     {
         $ID = mysqli_real_escape_string($link, $_GET['edit']);
+        $checkID=$link->query("SELECT name, surname, birth_years, shirt_number FROM players where ID=".$ID) or die(mysqli_error($link));
+        if (!(mysqli_num_rows($checkID))) {
+            die ('Šis ID negaliojantis');
+        }
         $playerbyID = getPlayerbyID($ID);       
     }
  
@@ -43,6 +47,16 @@
         $newshirt_number = mysqli_real_escape_string($link, strip_tags($_POST['newshirtnumber']));		
         $newteam = mysqli_real_escape_string($link, strip_tags($_POST['newteam']));		
         $ID = mysqli_real_escape_string($link, $_POST['ID']);
+        $rows = getPlayers();
+        if ($rows)
+        {
+            foreach ($rows as $row)
+            {
+                if (($row['name'] == $newname) AND ($row['surname'] == $newsurname)){
+                    die ('This player is created!');
+                }     
+            }
+        }
         if($newname == NULL || $newsurname == NULL || $newteam == NULL){
             die('Name and/or surname and/or team is required!');           
         }elseif($newbirth_years == NULL){
@@ -56,9 +70,9 @@
                     birth_years='$newbirth_years', shirt_number='$newshirt_number', team='$newteam' where ID='$ID'";
         }
         
+        
         $result = $link->query($sql) or die("Could not update".mysqli_error($link));
-        header("Location:index.php");
-        die();
+        header("Location:playerslist.php");
     }
 ?>
     <form action="edit.php" method="post" >
@@ -87,7 +101,7 @@
                     $getallnames = $link->query("Select * FROM teams");
                     while ($viewallnames = mysqli_fetch_array($getallnames)){
                 ?>
-                        <option id="<?php echo $viewallnames['ID']; ?>"><?php echo $viewallnames['name']; ?></option>
+                        <option id="<?php echo $viewallnames['ID']; ?>"><?php echo $viewallnames['team_name']; ?></option>
                     <?php } ?>
             </select></td>
         </tr>

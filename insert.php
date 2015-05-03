@@ -17,12 +17,6 @@
             die('Shirt number must be positive and integer number!');
         }
     }
-    /*$check="select * from Where name = '$_POST['name']'";
-    $rs = mysqli_query($link, $check);
-    $data = mysqli_fetch_array($rs, MYSQLI_NUM);
-    if ($data[0] > 1){
-        echo "ssss";
-    }*/
     
     $number = 0;
     $nam = mysqli_real_escape_string($link, strip_tags($_POST['name']));
@@ -36,21 +30,13 @@
     {
         foreach ($rows as $row)
         {
-            if (($row['name'] == $nam && $row['surname'] == $surn) && $row['team'] == $teams){
-                die ('This player are created!');
-            }      
+            if (($row['name'] == $nam) AND ($row['surname'] == $surn)){
+                die ('This player is created!');
+            }     
         }
     }
     
-    /*$result = mysqli_query("Select name From players WHERE name='Aurimas'");
-    if (mysqli_num_rows($result) > 0){
-        die ('This player exist!');
-    }*/
-    
-        
-    $sql = "INSERT INTO players (name,surname,birth_years,shirt_number,team) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.", '".$teams."')";
-    
-    //$sql="insert into players (name,surname,birth_years,shirt_number,team) Select $nam"
+    $sql="INSERT INTO players (name,surname,birth_years,shirt_number,team) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.", '".$teams."')";
     if (!$link->query($sql)) 
     {
          die('error: ' . mysqli_error($link));

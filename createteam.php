@@ -7,7 +7,6 @@
     <title>Komandos registravimas</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/lib/control/iconselect.css" >
 </head>
 <body>
     <div id='cssmenu'>
@@ -32,7 +31,7 @@
     <table id="table1" class="playersInsert">
         <tr>
             <td>Komandos pavadinimas*:</td>
-            <td><input type="text" name="name"></td>
+            <td><input type="text" name="team_name"></td>
         </tr>
         <tr>
             <td>Komandos miestas*:</td>

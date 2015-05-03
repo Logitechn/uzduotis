@@ -45,7 +45,6 @@
         <tr>
             <td>Komanda*:</td>
             <td><select name="team" class="textfields" >
-                <option id="0">  </option>
                 <?php
                     require_once('database.php');
                     require_once('functions.php');
@@ -55,14 +54,14 @@
                         foreach ($rows as $row)
                         {
                 ?>
-                        <option id="<?php echo $row['ID']; ?>"><?php echo $row['name']; ?></option>
+                        <option id="<?php echo $row['ID']; ?>"><?php echo $row['team_name']; ?></option>
                   <?php } ?>
                <?php } ?>
             </select></td>
         </tr>
     </table>
     
-    <strong class="table"><h3>*Būtina įvesti</h3></strong><br>
+    <h3><strong class="table">*Būtina įvesti</strong></h3>
     <input type="image" src="image/save.png" alt="Submit"></form>
 </body>
 </html>

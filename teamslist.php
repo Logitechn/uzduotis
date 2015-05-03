@@ -45,33 +45,35 @@
             $edit = "<a href='editteam.php?edit={$row['ID']}'><img src='image/edit.png'></a>";
             //$delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite ištrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>";
             $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite ištrynti?');\" href='deleteteam.php?del={$row['ID']}'><img src='image/delete.png'></a>";
+            $name = "<a href='viewteam.php?view={$row['team_name']}'>{$row['team_name']}</a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             if ($row['logo'] == 1){
-                $picture = "<img src='images/icons/1.png'>";
+                $picture = "<img src='image/1.png'  height='48' width='48'>";
             }elseif($row['logo'] == 2){
-                $picture = "<img src='images/icons/2.png'>";
+                $picture = "<img src='image/2.png' height='48' width='48'>";
             }elseif($row['logo'] == 3){
-                $picture = "<img src='images/icons/3.png'>";
+                $picture = "<img src='image/3.png' height='48' width='48'>";
             }elseif($row['logo'] == 4){
-                $picture = "<img src='images/icons/4.png'>";
+                $picture = "<img src='image/4.png' height='48' width='48'>";
             }elseif($row['logo'] == 5){
-                $picture = "<img src='images/icons/5.png'>";
+                $picture = "<img src='image/5.png' height='48' width='48'>";
             }elseif($row['logo'] == 6){
-                $picture = "<img src='images/icons/6.png'>";
+                $picture = "<img src='image/6.png' height='48' width='48'>";
             }elseif($row['logo'] == 7){
-                $picture = "<img src='images/icons/7.png'>";
+                $picture = "<img src='image/7.png' height='48' width='48'>";
             }elseif($row['logo'] == 8){
-                $picture = "<img src='images/icons/8.png'>";
+                $picture = "<img src='image/8.png' height='48' width='48'>";
             }elseif($row['logo'] == 9){
-                $picture = "<img src='images/icons/9.png'>";
+                $picture = "<img src='image/9.png' height='48' width='48'>";
             }elseif($row['logo'] == 10){
-                $picture = "<img src='images/icons/10.png'>";
+                $picture = "<img src='image/10.png' height='48' width='48'>";
             }elseif($row['logo'] == 11){
-                $picture = "<img src='images/icons/11.png'>";
+                $picture = "<img src='image/11.png' height='48' width='48'>";
             }             
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 
-                "</td><td class=\"".$class."\">". $row['name']. 
+                //"</td><td class=\"".$class."\">". $row['name']. 
+                "</td><td class=\"".$class."\">". $name. 
                 "</td><td class=\"".$class."\">" .$row['city']. 
                 //"</td><td class=\"".$class."\">" .$picture. 
                 "</td><td class=\"".$class."\">" .$picture. 

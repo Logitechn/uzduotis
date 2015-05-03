@@ -6,250 +6,364 @@ th {
     color:  #CCCC33 ;
 }
 h3 {
-color: white;
+    color: white;
 }
 h2 {
-color: white;
+    color: white;
 }
 #cssmenu {
-  border: none;
-  border: 0px;
-  margin: 0px;
-  padding: 0px;
-  font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
+    border: none;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
 }
 #cssmenu ul {
-  background: #333333;
-  height: 35px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    background: #333333;
+    height: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 #cssmenu li {
-  float: left;
-  padding: 0px;
+    float: left;
+    padding: 0px;
 }
 #cssmenu li a {
-  background: #333333 url("image/seperator.gif") bottom right no-repeat;
-  display: block;
-  font-weight: normal;
-  line-height: 35px;
-  margin: 0px;
-  padding: 0px 25px;
-  text-align: center;
-  text-decoration: none;
+    background: #333333 url("image/seperator.gif") bottom right no-repeat;
+    display: block;
+    font-weight: normal;
+    line-height: 35px;
+    margin: 0px;
+    padding: 0px 25px;
+    text-align: center;
+    text-decoration: none;
 }
 #cssmenu > ul > li > a {
-  color: #cccccc;
+    color: #cccccc;
 }
 #cssmenu ul ul a {
-  color: #cccccc;
+    color: #cccccc;
 }
 #cssmenu li > a:hover,
 #cssmenu ul li:hover > a {
-  background: #2580a2 url("image/hover.png") bottom center no-repeat;
-  color: #ffffff;
-  text-decoration: none;
+    background: #2580a2 url("image/hover.png") bottom center no-repeat;
+    color: #ffffff;
+    text-decoration: none;
 }
 #cssmenu li ul {
-  background: #333333;
-  display: none;
-  height: auto;
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
-  position: absolute;
-  width: 225px;
-  z-index: 200;
-  /*top:1em;
-	/*left:0;*/
+    background: #333333;
+    display: none;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    position: absolute;
+    width: 225px;
+    z-index: 200;
+    /*top:1em;
+    /*left:0;*/
 
 }
 #cssmenu li:hover ul {
-  display: block;
+    display: block;
 }
 #cssmenu li li {
-  background: url('image/sub_sep.gif') bottom left no-repeat;
-  display: block;
-  float: none;
-  margin: 0px;
-  padding: 0px;
-  width: 225px;
+    background: url('image/sub_sep.gif') bottom left no-repeat;
+    display: block;
+    float: none;
+    margin: 0px;
+    padding: 0px;
+    width: 225px;
 }
 #cssmenu li:hover li a {
-  background: none;
+    background: none;
 }
 #cssmenu li ul a {
-  display: block;
-  height: 35px;
-  font-size: 12px;
-  font-style: normal;
-  margin: 0px;
-  padding: 0px 10px 0px 15px;
-  text-align: left;
+    display: block;
+    height: 35px;
+    font-size: 12px;
+    font-style: normal;
+    margin: 0px;
+    padding: 0px 10px 0px 15px;
+    text-align: left;
 }
 #cssmenu li ul a:hover,
 #cssmenu li ul li:hover > a {
-  background: #2580a2 url('image/hover_sub.png') center left no-repeat;
-  border: 0px;
-  color: #ffffff;
-  text-decoration: none;
+    background: #2580a2 url('image/hover_sub.png') center left no-repeat;
+    border: 0px;
+    color: #ffffff;
+    text-decoration: none;
 }
 #cssmenu p {
-  clear: left;
+    clear: left;
 }
 #cssmenu ul ul li {
-  position: relative;
+    position: relative;
 }
 #cssmenu ul ul ul {
-  left: -9999px;
-  top: 0;
+    left: -9999px;
+    top: 0;
 }
 #cssmenu ul ul li:hover > ul {
-  left: 100%;
+    left: 100%;
 }
 #cssmenu.align-center > ul > li {
-  display: inline-block;
-  float: none;
+    display: inline-block;
+    float: none;
 }
 #cssmenu.align-center > ul {
-  text-align: center;
+    text-align: center;
 }
 #cssmenu > ul > li {
-  position: relative;
+    position: relative;
 }
 #cssmenu.align-right > ul > li {
-  float: right;
+    float: right;
 }
 #cssmenu.align-right > ul > li:hover > ul {
-  right: 0;
-  left: auto;
-  text-align: right;
+    right: 0;
+    left: auto;
+    text-align: right;
 }
 #cssmenu.align-right ul ul li a {
-  text-align: right;
+    text-align: right;
 }
 #cssmenu.align-right ul ul li:hover > ul {
-  left: auto;
-  right: 100%;
+    left: auto;
+    right: 100%;
 }
 
 
 .playersInsert{
-color: white;
+    color: white;
 }
 li {
-	list-style-type: none; 
-	display: inline; 
-	padding:5px; 
-	text-align: center;
+    list-style-type: none; 
+    display: inline; 
+    padding:5px; 
+    text-align: center;
 }
 .PlayersListTable {
-	margin:0px;padding:0px;
-	width:100px;
-	box-shadow: 10px 10px 5px #888888;
-	border:1px solid #7f7f7f;
-	
-	-moz-border-radius-bottomleft:17px;
-	-webkit-border-bottom-left-radius:17px;
-	border-bottom-left-radius:17px;
-	
-	-moz-border-radius-bottomright:17px;
-	-webkit-border-bottom-right-radius:17px;
-	border-bottom-right-radius:17px;
-	
-	-moz-border-radius-topright:17px;
-	-webkit-border-top-right-radius:17px;
-	border-top-right-radius:17px;
-	
-	-moz-border-radius-topleft:17px;
-	-webkit-border-top-left-radius:17px;
-	border-top-left-radius:17px;
+    margin:0px;padding:0px;
+    width:100px;
+    box-shadow: 10px 10px 5px #888888;
+    border:1px solid #7f7f7f;
+    
+    -moz-border-radius-bottomleft:17px;
+    -webkit-border-bottom-left-radius:17px;
+    border-bottom-left-radius:17px;
+    
+    -moz-border-radius-bottomright:17px;
+    -webkit-border-bottom-right-radius:17px;
+    border-bottom-right-radius:17px;
+    
+    -moz-border-radius-topright:17px;
+    -webkit-border-top-right-radius:17px;
+    border-top-right-radius:17px;
+    
+    -moz-border-radius-topleft:17px;
+    -webkit-border-top-left-radius:17px;
+    border-top-left-radius:17px;
 }.PlayersListTable table{
     border-collapse: collapse;
-        border-spacing: 0;
-	width:100%;
-	height:100%;
-	margin:0px;padding:0px;
+    border-spacing: 0;
+    width:100%;
+    height:100%;
+    margin:0px;padding:0px;
 }.PlayersListTable tr:last-child td:last-child {
-	-moz-border-radius-bottomright:17px;
-	-webkit-border-bottom-right-radius:17px;
-	border-bottom-right-radius:17px;
+    -moz-border-radius-bottomright:17px;
+    -webkit-border-bottom-right-radius:17px;
+    border-bottom-right-radius:17px;
 }
 .PlayersListTable table tr:first-child td:first-child {
-	-moz-border-radius-topleft:17px;
-	-webkit-border-top-left-radius:17px;
-	border-top-left-radius:17px;
+    -moz-border-radius-topleft:17px;
+    -webkit-border-top-left-radius:17px;
+    border-top-left-radius:17px;
 }
 .PlayersListTable table tr:first-child td:last-child {
-	-moz-border-radius-topright:17px;
-	-webkit-border-top-right-radius:17px;
-	border-top-right-radius:17px;
+    -moz-border-radius-topright:17px;
+    -webkit-border-top-right-radius:17px;
+    border-top-right-radius:17px;
 }.PlayersListTable tr:last-child td:first-child{
-	-moz-border-radius-bottomleft:17px;
-	-webkit-border-bottom-left-radius:17px;
-	border-bottom-left-radius:17px;
+    -moz-border-radius-bottomleft:17px;
+    -webkit-border-bottom-left-radius:17px;
+    border-bottom-left-radius:17px;
 }.PlayersListTable tr:hover td{
-	background-color:#ff7f00;
-		
-
+    background-color:#ff7f00;
 }
 .PlayersListTable td{
-	vertical-align:middle;
-	
-	background-color:#ffffff;
-
-	border:1px solid #7f7f7f;
-	border-width:0px 1px 1px 0px;
-	text-align:center;
-	padding:14px;
-	font-size:10px;
-	font-family:Comic Sans MS;
-	font-weight:normal;
-	color:#000000;
+    vertical-align:middle;
+    
+    background-color:#ffffff;
+    border:1px solid #7f7f7f;
+    border-width:0px 1px 1px 0px;
+    text-align:center;
+    padding:14px;
+    font-size:10px;
+    font-family:Comic Sans MS;
+    font-weight:normal;
+    color:#000000;
 }.PlayersListTable tr:last-child td{
-	border-width:0px 1px 0px 0px;
+    border-width:0px 1px 0px 0px;
 }.PlayersListTable tr td:last-child{
-	border-width:0px 0px 1px 0px;
+    border-width:0px 0px 1px 0px;
 }.PlayersListTable tr:last-child td:last-child{
-	border-width:0px 0px 0px 0px;
+    border-width:0px 0px 0px 0px;
 }
 .PlayersListTable tr:first-child td{
-		background:-o-linear-gradient(bottom, #ff0000 5%, #7f0000 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #7f0000) );
-	background:-moz-linear-gradient( center top, #ff0000 5%, #7f0000 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#7f0000");	background: -o-linear-gradient(top,#ff0000,7f0000);
+    background:-o-linear-gradient(bottom, #ff0000 5%, #7f0000 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #7f0000) );
+    background:-moz-linear-gradient( center top, #ff0000 5%, #7f0000 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#7f0000");	background: -o-linear-gradient(top,#ff0000,7f0000);
 
-	background-color:#ff0000;
-	border:0px solid #7f7f7f;
-	text-align:center;
-	border-width:0px 0px 1px 1px;
-	font-size:10px;
-	font-family:Verdana;
-	font-weight:bold;
-	color:#cccccc;
+    background-color:#ff0000;
+    border:0px solid #7f7f7f;
+    text-align:center;
+    border-width:0px 0px 1px 1px;
+    font-size:10px;
+    font-family:Verdana;
+    font-weight:bold;
+    color:#cccccc;
 }
 .PlayersListTable tr:first-child:hover td{
-	background:-o-linear-gradient(bottom, #ff0000 5%, #7f0000 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #7f0000) );
-	background:-moz-linear-gradient( center top, #ff0000 5%, #7f0000 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#7f0000");	background: -o-linear-gradient(top,#ff0000,7f0000);
+    background:-o-linear-gradient(bottom, #ff0000 5%, #7f0000 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #7f0000) );
+    background:-moz-linear-gradient( center top, #ff0000 5%, #7f0000 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000", endColorstr="#7f0000");	background: -o-linear-gradient(top,#ff0000,7f0000);
 
-	background-color:#ff0000;
+    background-color:#ff0000;
 }
 .PlayersListTable tr:first-child td:first-child{
-	border-width:0px 0px 1px 0px;
+    border-width:0px 0px 1px 0px;
 }
 .PlayersListTable tr:first-child td:last-child{
-	border-width:0px 0px 1px 1px;
+    border-width:0px 0px 1px 1px;
 }
-	border-width:0px 0px 1px 1px;
+    border-width:0px 0px 1px 1px;
 }
-
-
 
 .normalbackground { background-color: #009933; }
 .coloredbackground { background-color: #009933 ; }
 body {
     background-image: url(image/background.jpg);
 }
+
+.icon-select{
+    width:0px;
+ }
+
+.icon-select .selected-box {
+
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    width: 70px; /* sil */
+    height: 60px; /* sil */
+    border: 1px solid #999999;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+ }
+
+.icon-select .selected-box:hover {
+
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    width: 70px; /* sil */
+    height: 60px; /* sil */
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+ }
+
+.icon-select .selected-icon {
+
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    top:5px;
+    left:5px;
+    width: 48px; /* sil */
+    height: 48px; /* sil */
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+ }
+
+.icon-select .component-icon{
+    position: absolute;
+    bottom:5px;
+    right:4px;
+ }
+
+.icon-select .box {
+
+    position: absolute;
+    top:0px;
+    left:71px;
+    margin: 0px;
+    padding: 0px;
+    width: 170px; /* sil */
+    height: 170px; /* sil */
+    border: 1px solid #EEEEEE;
+    background-color: #EEEEEE;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    
+    
+    overflow:auto;
+    /*
+    -webkit-overflow-scrolling: touch;
+    */
+
+ }
+
+.icon-select .icon {
+    position: relative;
+    margin: 5px 0px 0px 5px;
+    padding: 0px;
+    width: 48px; /* sil */
+    height: 48px; /* sil */
+    border: 1px solid #CCCCCC;
+    background-color: #FFFFFF;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    overflow:hidden;
+    float: left;
+ }
+
+.icon-select .icon:hover {
+    border: 1px solid #000000;
+ }
+
+.icon-select .icon.selected {
+    position: relative;
+    margin: 5px 0px 0px 5px;
+    padding: 0px;
+    width: 48px; /* sil */
+    height: 48px; /* sil */
+    border: 1px solid #EEEEEE;
+    background-color: #EEEEEE;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+
+    overflow:hidden;
+    float: left;
+ }
