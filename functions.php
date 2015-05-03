@@ -56,9 +56,11 @@
         return null;
     }
 ?>
-<script type="text/javascript" src="javascript/iconselect.js"></script>
-<script type="text/javascript" src="javascript/iscroll.js"></script>
-<script>
+<script type="text/javascript" src="javascript/iconselect.js">
+</script>
+<script type="text/javascript" src="javascript/iscroll.js">
+</script>
+<script type="text/javascript">
             
         var iconSelect;
         var selectedText;

@@ -42,8 +42,8 @@
         foreach ($rows as $row)
         {
             $ind++;
-            $edit = "<a href='edit.php?edit={$row['ID']}'><img src='image/edit.png'></a>";
-            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite ištrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png'></a>";
+            $edit = "<a href='edit.php?edit={$row['ID']}'><img src='image/edit.png' alt='edit picture'></a>";
+            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite ištrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png' alt='Delete picture'></a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 

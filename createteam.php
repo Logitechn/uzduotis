@@ -1,12 +1,12 @@
-<?php 
-    require_once('functions.php'); 
-?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Komandos registravimas</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <?php 
+        require_once('functions.php'); 
+    ?>
 </head>
 <body>
     <div id='cssmenu'>
@@ -44,7 +44,7 @@
         </tr>
     </table>
     
-    <strong class="table"><h3>*Būtina įvesti</h3></strong><br>
+    <h3><strong class="table">*Būtina įvesti</strong></h3>
     <input type="image" src="image/save.png" alt="Submit"></form>
 </body>
 </html>

@@ -1,12 +1,12 @@
-<?php 
-    require_once('functions.php'); 
-?>
 <!DOCTYPE html>
 <html>
 <head>
     <title> Komandos duomenu redagavimas </title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <?php 
+        require_once('functions.php'); 
+    ?>
 </head>
 <body>
     <div id='cssmenu'>
@@ -76,7 +76,7 @@
     </table>
     
     <input type="hidden" name="ID" value="<?php echo $ID; ?>">
-    <strong class="table"><h3>*Būtina įvesti</h3></strong><br>
+    <h3><strong class="table">*Būtina įvesti</strong></h3>
     <input type="image" src="image/update.png" alt="Submit"></form>
     
 </body>

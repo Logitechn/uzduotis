@@ -47,7 +47,7 @@
         $newshirt_number = mysqli_real_escape_string($link, strip_tags($_POST['newshirtnumber']));		
         $newteam = mysqli_real_escape_string($link, strip_tags($_POST['newteam']));		
         $ID = mysqli_real_escape_string($link, $_POST['ID']);
-        $rows = getPlayers();
+        /*$rows = getPlayers();
         if ($rows)
         {
             foreach ($rows as $row)
@@ -56,7 +56,7 @@
                     die ('This player is created!');
                 }     
             }
-        }
+        }*/
         if($newname == NULL || $newsurname == NULL || $newteam == NULL){
             die('Name and/or surname and/or team is required!');           
         }elseif($newbirth_years == NULL){
@@ -96,7 +96,6 @@
         <tr>
             <td>Komanda*:</td>
             <td><select name="newteam" class="textfields" >
-                <option id="0">  </option>
                 <?php 
                     $getallnames = $link->query("Select * FROM teams");
                     while ($viewallnames = mysqli_fetch_array($getallnames)){
@@ -108,7 +107,7 @@
     </table>
     
     <input type="hidden" name="ID" value="<?php echo $ID; ?>">
-    <strong class="table"><h3>*Būtina įvesti</h3></strong><br>
+    <h3><strong class="table">*Būtina įvesti</strong></h3>
     <input type="image" src="image/update.png" alt="Submit"></form>
     
 </body>
