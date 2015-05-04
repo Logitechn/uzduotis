@@ -27,12 +27,12 @@
     <h3>Krepšininko duomenu redagavimas:</h3>
 <?php 
     require_once('database.php');
-    require_once('functions.php');
+    require_once('functions-php.php');
     
     if(isset($_GET['edit']))
     {
         $ID = mysqli_real_escape_string($link, $_GET['edit']);
-        $checkID=$link->query("SELECT name, surname, birth_years, shirt_number FROM players where ID=".$ID) or die(mysqli_error($link));
+        $checkID=$link->query("SELECT name, surname, birth_years, shirt_number, team FROM players where ID=".$ID) or die(mysqli_error($link));
         if (!(mysqli_num_rows($checkID))) {
             die ('Šis ID negaliojantis');
         }
@@ -47,16 +47,6 @@
         $newshirt_number = mysqli_real_escape_string($link, strip_tags($_POST['newshirtnumber']));		
         $newteam = mysqli_real_escape_string($link, strip_tags($_POST['newteam']));		
         $ID = mysqli_real_escape_string($link, $_POST['ID']);
-        /*$rows = getPlayers();
-        if ($rows)
-        {
-            foreach ($rows as $row)
-            {
-                if (($row['name'] == $newname) AND ($row['surname'] == $newsurname)){
-                    die ('This player is created!');
-                }     
-            }
-        }*/
         if($newname == NULL || $newsurname == NULL || $newteam == NULL){
             die('Name and/or surname and/or team is required!');           
         }elseif($newbirth_years == NULL){
@@ -75,7 +65,7 @@
         header("Location:playerslist.php");
     }
 ?>
-    <form action="edit.php" method="post" >
+    <form action="editplayer.php" method="post" >
     <table id="table1" class="playersInsert">
         <tr>
             <td>Krepšininko vardas*:  </td>
@@ -96,12 +86,14 @@
         <tr>
             <td>Komanda*:</td>
             <td><select name="newteam" class="textfields" >
+            <option id="0"> <?php echo $playerbyID['team']; ?> </option>
                 <?php 
                     $getallnames = $link->query("Select * FROM teams");
                     while ($viewallnames = mysqli_fetch_array($getallnames)){
-                ?>
-                        <option id="<?php echo $viewallnames['ID']; ?>"><?php echo $viewallnames['team_name']; ?></option>
-                    <?php } ?>
+                        if ($viewallnames['team_name'] != $playerbyID['team'] ){
+                ?>            <option id="<?php echo $viewallnames['ID']; ?>"><?php echo $viewallnames['team_name']; ?></option>
+                   <?php }
+                    } ?>
             </select></td>
         </tr>
     </table>

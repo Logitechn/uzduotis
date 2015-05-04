@@ -23,7 +23,7 @@
        </li>
     </ul>
     </div>
-        <form action="insert.php" method="post">
+        <form action="insertplayer.php" method="post">
     <h3><strong class="errorText specTest">Krepšinio žaidėju registravimo forma:</strong></h3>
     <table id="table1" class="playersInsert">
         <tr>
@@ -47,7 +47,7 @@
             <td><select name="team" class="textfields" >
                 <?php
                     require_once('database.php');
-                    require_once('functions.php');
+                    require_once('functions-php.php');
                     $rows = getTeams();
                     if ($rows)
                     {

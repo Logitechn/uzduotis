@@ -3,7 +3,7 @@
 <head>
     <title>Komandos sąrašas</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 </head>
 <body>
     <div id='cssmenu'>
@@ -27,7 +27,7 @@
 
 <?php
     require_once('database.php');
-    require_once('functions.php');
+    require_once('functions-php.php');
     if(isset($_GET['view']))
     {
         $name = mysqli_real_escape_string($link, $_GET['view']);
@@ -35,7 +35,7 @@
         if (!(mysqli_num_rows($checkID))) {
             die ('Ši komanda neegzistuoja');
         }
-        $playersyID = getPlayersbyID($name);       
+        $playersyID = getPlayersbyTeamName($name);       
     }
     echo "<table id=\"table2\" class=\"PlayersListTable table\">";
     echo "<tr><th>Eilės nr.</th><th>Krepšininko vardas</th><th>Krepšininko pavardė</th><th>Gimimo data</th><th>Marškineliu numeris</th>";

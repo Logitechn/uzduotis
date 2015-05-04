@@ -4,9 +4,6 @@
     <title> Komandos duomenu redagavimas </title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <?php 
-        require_once('functions.php'); 
-    ?>
 </head>
 <body>
     <div id='cssmenu'>
@@ -29,7 +26,7 @@
     <h3>Komandos duomenu redagavimas:</h3>
 <?php 
     require_once('database.php');
-    require_once('functions.php');
+    require_once('functions-php.php');
     
     if(isset($_GET['edit']))
     {

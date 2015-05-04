@@ -1,12 +1,12 @@
+<?php 
+    require_once('functions-js.js'); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Komandos registravimas</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <?php 
-        require_once('functions.php'); 
-    ?>
 </head>
 <body>
     <div id='cssmenu'>
@@ -26,7 +26,7 @@
        </li>
     </ul>
     </div>
-        <form action="insertteam.php" method="post">
+        <form action="insertteam.php" method="post" enctype="multipart/form-data">
     <h3><strong class="errorText specTest">Komandu registravimo forma:</strong></h3>
     <table id="table1" class="playersInsert">
         <tr>
@@ -37,14 +37,20 @@
             <td>Komandos miestas*:</td>
             <td><input type="text" name="city"></td>
         </tr>
-        <tr>
+        <!--<tr>
             <td>Komandos logotipas*:</td>
             <td><div id="my-icon-select"></div></td>
             <td><input type="hidden" id="selected-text" name="logo"></td>
+        </tr>-->
+        <tr>
+            <td>Komandos logotipas*:</td>
+            <td><input type="file" name="fileToUpload" id="fileToUpload"></td>                
         </tr>
     </table>
     
     <h3><strong class="table">*Būtina įvesti</strong></h3>
-    <input type="image" src="image/save.png" alt="Submit"></form>
+    <!--<input type="image" src="image/save.png" name="Submit"></form>-->
+    <input type="submit" value="Upload Image and Create Team" name="submit"></form>
+    
 </body>
 </html>

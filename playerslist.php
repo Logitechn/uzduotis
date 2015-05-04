@@ -27,7 +27,7 @@
 
 <?php
     require_once('database.php');
-    require_once('functions.php');
+    require_once('functions-php.php');
     echo "<table id=\"table2\" class=\"PlayersListTable table\">";
     echo "<tr><th>Eilės nr.</th><th>Krepšininko vardas</th><th>Krepšininko pavardė</th><th>Gimimo data</th><th>Marškineliu numeris</th><th>Komanda</th><th>  </th><th>  </th></tr>";
     
@@ -42,8 +42,8 @@
         foreach ($rows as $row)
         {
             $ind++;
-            $edit = "<a href='edit.php?edit={$row['ID']}'><img src='image/edit.png' alt='edit picture'></a>";
-            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite ištrynti?');\" href='delete.php?del={$row['ID']}'><img src='image/delete.png' alt='Delete picture'></a>";
+            $edit = "<a href='editplayer.php?edit={$row['ID']}'><img src='image/edit.png' alt='edit picture'></a>";
+            $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite ištrynti?');\" href='deleteplayer.php?del={$row['ID']}'><img src='image/delete.png' alt='Delete picture'></a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 
