@@ -44,7 +44,7 @@
             $ind++;
             $edit = "<a href='editteam.php?edit={$row['ID']}'><img src='image/edit.png' alt='edit picture'></a>";
             $delit = "<a onClick=\"javascript: return confirm('Ar tikrai norite ištrynti?');\" href='deleteteam.php?del={$row['ID']}'><img src='image/delete.png' alt='Delete picture'></a>";
-            $name = "<a href='viewteam.php?view={$row['team_name']}'>{$row['team_name']}</a>";
+            $name = "<a href='viewteam.php?view={$row['ID']}'>{$row['teams_name']}</a>";
             $i++; if (($i %2) == 0) {$class = "coloredbackground";} else {$class = "normalbackground";};   
             echo 
                 "<tr><td class=\"".$class."\">" .$ind. 

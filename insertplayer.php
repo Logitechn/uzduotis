@@ -6,7 +6,7 @@
     {
         die('Name and/or surname is required!');
     }
-    if (empty($_POST['team'])) 
+    if (empty($_POST['team_name'])) 
     {
         die('Select or Create team!');
     }
@@ -23,7 +23,8 @@
     $surn = mysqli_real_escape_string($link, strip_tags($_POST['surname']));
     $birth = strip_tags(!empty(mysqli_real_escape_string($link, $_POST['birth_years'])) ? sprintf("'%s'",$_POST['birth_years']) : 'null');
     $number = strip_tags(!empty(mysqli_real_escape_string($link, $_POST['shirt_number'])) ? sprintf("'%s'",$_POST['shirt_number']) : 'null');
-    $teams = mysqli_real_escape_string($link, strip_tags($_POST['team']));
+    $team_name = mysqli_real_escape_string($link, strip_tags($_POST['team_name']));
+    
     
     $rows = getPlayers();
     if ($rows)
@@ -36,7 +37,19 @@
         }
     }
     
-    $sql="INSERT INTO players (name,surname,birth_years,shirt_number,team) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.", '".$teams."')";
+    $rowss = getTeams();
+    if ($rowss)
+    {
+        foreach ($rowss as $row)
+        {
+            if($row['teams_name'] == $team_name){
+                $team_id = $row['ID'];
+            }
+        }
+ 
+    }
+    
+    $sql="INSERT INTO players (name,surname,birth_years,shirt_number,team_ID,team_name) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.", '".$team_id."', '".$team_name."')";
     if (!$link->query($sql)) 
     {
          die('error: ' . mysqli_error($link));

@@ -4,15 +4,17 @@ CREATE TABLE IF NOT EXISTS `players` (
   `surname` varchar(255) NOT NULL,
   `birth_years` date NULL,
   `shirt_number` varchar(2) NULL,
+  `team_ID` int(11) NOT NULL,
+  `team_name` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 
 
-ALTER TABLE `players` ADD `team` varchar(255) NOT NULL
+ALTER TABLE players ADD FOREIGN KEY (team_ID) REFERENCES teams(ID) ON DELETE CASCADE ON UPDATE CASCADE
 
 CREATE TABLE IF NOT EXISTS `teams` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `team_name` varchar(255) NOT NULL,
+  `teams_name` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
-  `logo` tinytext NOT NULL,
+  `logo_name` varchar (255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 

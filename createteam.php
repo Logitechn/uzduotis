@@ -31,7 +31,7 @@
     <table id="table1" class="playersInsert">
         <tr>
             <td>Komandos pavadinimas*:</td>
-            <td><input type="text" name="team_name"></td>
+            <td><input type="text" name="teams_name"></td>
         </tr>
         <tr>
             <td>Komandos miestas*:</td>

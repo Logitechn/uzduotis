@@ -44,7 +44,7 @@
         </tr>
         <tr>
             <td>Komanda*:</td>
-            <td><select name="team" class="textfields" >
+            <td><select name="team_name" class="textfields" >
                 <?php
                     require_once('database.php');
                     require_once('functions-php.php');
@@ -54,7 +54,7 @@
                         foreach ($rows as $row)
                         {
                 ?>
-                        <option id="<?php echo $row['ID']; ?>"><?php echo $row['team_name']; ?></option>
+                        <option id="<?php echo $row['ID']; ?>"><?php echo $row['teams_name']; ?></option>
                   <?php } ?>
                <?php } ?>
             </select></td>

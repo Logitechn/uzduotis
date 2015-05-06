@@ -51,7 +51,7 @@
                 "</td><td class=\"".$class."\">" .$row['surname']. 
                 "</td><td class=\"".$class."\">" .$row['birth_years']. 
                 "</td><td class=\"".$class."\">" .$row['shirt_number'].
-                "</td><td class=\"".$class."\">" .$row['team'].
+                "</td><td class=\"".$class."\">" .$row['team_name'].
                 "</td><td class=\"".$class."\">" . $edit. 
                 "</td><td class=\"".$class."\">" . $delit.             
                 "</td></tr>";

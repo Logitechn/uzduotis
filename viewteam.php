@@ -30,12 +30,12 @@
     require_once('functions-php.php');
     if(isset($_GET['view']))
     {
-        $name = mysqli_real_escape_string($link, $_GET['view']);
-        $checkID=$link->query("select city, logo FROM teams where team_name='$name'") or die(mysqli_error($link));
+        $ID = mysqli_real_escape_string($link, $_GET['view']);
+        $checkID=$link->query("SELECT teams_name, city, logo_name FROM teams where ID=".$ID) or die(mysqli_error($link));
         if (!(mysqli_num_rows($checkID))) {
-            die ('Ši komanda neegzistuoja');
+            die ('Šis ID neegzistuoja');
         }
-        $playersyID = getPlayersbyTeamName($name);       
+        $playersyID = getPlayersbyTeamID($ID);       
     }
     echo "<table id=\"table2\" class=\"PlayersListTable table\">";
     echo "<tr><th>Eilės nr.</th><th>Krepšininko vardas</th><th>Krepšininko pavardė</th><th>Gimimo data</th><th>Marškineliu numeris</th>";
