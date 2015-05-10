@@ -1,6 +1,3 @@
-<?php 
-    require_once('functions-js.js'); 
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,11 +34,6 @@
             <td>Komandos miestas*:</td>
             <td><input type="text" name="city"></td>
         </tr>
-        <!--<tr>
-            <td>Komandos logotipas*:</td>
-            <td><div id="my-icon-select"></div></td>
-            <td><input type="hidden" id="selected-text" name="logo"></td>
-        </tr>-->
         <tr>
             <td>Komandos logotipas*:</td>
             <td><input type="file" name="fileToUpload" id="fileToUpload"></td>                
@@ -49,8 +41,7 @@
     </table>
     
     <h3><strong class="table">*Būtina įvesti</strong></h3>
-    <!--<input type="image" src="image/save.png" name="Submit"></form>-->
-    <input type="submit" value="Upload Image and Create Team" name="submit"></form>
+    <input type="image" src="image/update.png" name="submit" alt="atnaujinti"></form>
     
 </body>
 </html>
