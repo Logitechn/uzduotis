@@ -35,9 +35,7 @@
         if (!(mysqli_num_rows($checkID))) {
             die ('Šis ID negaliojantis');
         }
-        $teambyID = getTeamID($ID);
-        $playerbyteamID = getPlayersbyTeamID($ID);
-        
+        $teambyID = getTeamID($ID);        
     }
  
     if(isset($_POST['newname']))
@@ -47,7 +45,7 @@
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
         
-        if(isset($_POST["submit"])&& basename($_FILES["fileToUpload"]["name"])!='') {
+        if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
                 echo "File is an image - " . $check["mime"] . ".";
@@ -56,18 +54,6 @@
             else{
                 die ('File is not an image.');
                 $uploadOk = 0;
-            }
-        }
-        
-        if ($uploadOk == 0){
-            die ('Sorry, your file was not uploaded.');
-        }
-        else{
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-            }
-            else{
-                die ('Sorry, there was an error uploading your file.');
             }
         }
         
@@ -83,18 +69,24 @@
             {
                 foreach ($rows as $row)
                 {
-                    if($row['team_ID'] == $ID){
-                        $sql = ("UPDATE teams, players SET teams.teams_name='$newname', players.team_name='$newname', teams.city='$newcity',
-                                teams.logo_name='$target_file' where teams.ID='$ID' AND teams.ID = players.team_ID");
+                    if (!empty($_FILES["fileToUpload"]["name"])){
+                        if($row['team_ID'] == $ID){
+                            $sql = ("UPDATE teams, players SET teams.teams_name='$newname', players.team_name='$newname', teams.city='$newcity',
+                                    teams.logo_name='$target_file' where teams.ID='$ID' AND teams.ID = players.team_ID");
+                        }else{
+                            $sql = ("UPDATE teams SET teams_name='$newname', city='$newcity',
+                                    logo_name='$target_file' where ID='$ID'");
+                        }
+                        $result = $link->query($sql) or die("Could not update".mysqli_error($link));
+                        header("Location:teamslist.php");
+                        die();
                     }else{
-                        $sql = ("UPDATE teams SET teams_name='$newname', city='$newcity',
-                                logo_name='$target_file' where ID='$ID'");
+                        $sql = ("UPDATE teams SET teams_name='$newname', city='$newcity' where ID='$ID'");
+                        $result = $link->query($sql) or die("Could not update".mysqli_error($link));
+                        header("Location:teamslist.php");
+                        die();
                     }
-                    $result = $link->query($sql) or die("Could not update".mysqli_error($link));
-                    header("Location:teamslist.php");
-                    die();
-                }
-         
+                }         
             } 
         }
     }
@@ -111,6 +103,9 @@
         </tr>
         <tr>
             <td>Komandos logotipas*:  </td>
+            <td><img src="<?php echo $teambyID['logo_name']; ?>" height="50" width="50" alt="nera logotipo"></td>
+        </tr>
+        <tr>
             <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
         </tr>
     </table>

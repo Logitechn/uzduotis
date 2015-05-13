@@ -19,4 +19,4 @@ CREATE TABLE IF NOT EXISTS `teams` (
 
 ALTER TABLE players ADD FOREIGN KEY (team_ID) REFERENCES teams(ID) ON DELETE CASCADE ON UPDATE RESTRICT
 
-ALTER TABLE `players` ADD UNIQUE( `name`, `surname`); 
+ALTER TABLE `players` ADD UNIQUE( `name`, `surname`) 
