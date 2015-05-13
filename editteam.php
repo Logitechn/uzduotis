@@ -56,6 +56,20 @@
                 $uploadOk = 0;
             }
         }
+        if (!empty($_FILES["fileToUpload"]["name"])){
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+                die ('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');
+                $uploadOk = 0;
+            } 
+        }
+        if ($uploadOk == 0){
+        die ('Sorry, your file was not uploaded.');
+        }
+        else{
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+            }
+        }
         
         $newname = mysqli_real_escape_string($link, strip_tags($_POST['newname']));
         $newcity= mysqli_real_escape_string($link, strip_tags($_POST['newcity']));

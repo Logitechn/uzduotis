@@ -18,6 +18,11 @@
         }
     }
     
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+        die ('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');
+        $uploadOk = 0;
+    } 
+    
     if ($uploadOk == 0){
         die ('Sorry, your file was not uploaded.');
     }
