@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS `players` (
   `birth_years` date NULL,
   `shirt_number` varchar(2) NULL,
   `team_ID` int(11) NOT NULL,
-  `team_name` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 
 

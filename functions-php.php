@@ -2,7 +2,8 @@
     function getPlayers()
     {
             global $link;
-            $sql= "SELECT * FROM players"; 
+            $sql= "SELECT players.ID, players.name, players.surname, players.birth_years, players.shirt_number, teams.teams_name 
+            FROM players join teams on teams.ID=players.team_ID"; 
             $query= $link->query($sql);
             if ($query != false)
             {
@@ -30,10 +31,11 @@
     function getPlayerbyID($ID)
     {   
             global $link;
-            $res= $link->query("SELECT name, surname, birth_years, shirt_number, team_name FROM players where ID=".$ID);
+            $res= $link->query("SELECT players.name, players.surname, players.birth_years, players.shirt_number, players.team_ID, teams.teams_name 
+            FROM players join teams on teams.ID=players.team_ID where players.ID=".$ID);            
             $row = mysqli_fetch_array($res);            
             return array('name' => $row['name'],'surname' => $row['surname'],
-            'birth_years' => $row['birth_years'],'shirt_number' => $row['shirt_number'], 'team_name' => $row['team_name']);
+            'birth_years' => $row['birth_years'],'shirt_number' => $row['shirt_number'], 'teams_name' => $row['teams_name']);
     }
     function getTeamID($ID)
     {   

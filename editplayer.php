@@ -32,7 +32,7 @@
     if(isset($_GET['edit']))
     {
         $ID = mysqli_real_escape_string($link, $_GET['edit']);
-        $checkID=$link->query("SELECT name, surname, birth_years, shirt_number, team_name FROM players where ID=".$ID) or die(mysqli_error($link));
+        $checkID=$link->query("SELECT name, surname, birth_years, shirt_number FROM players where ID=".$ID) or die(mysqli_error($link));
         if (!(mysqli_num_rows($checkID))) {
             die ('Šis ID negaliojantis');
         }
@@ -62,13 +62,13 @@
             die('Name and/or surname and/or team is required!');           
         }elseif($newbirth_years == NULL){
             $sql = "UPDATE players, teams SET players.name='$newname', players.surname='$newsurname',
-                    players.birth_years=NULL, players.shirt_number='$newshirt_number', players.team_ID='$team_id', players.team_name='$newteam' where players.ID='$ID'";
+                    players.birth_years=NULL, players.shirt_number='$newshirt_number', players.team_ID='$team_id' where players.ID='$ID'";
         }elseif($newshirt_number == NULL){
             $sql = "UPDATE players, teams SET players.name='$newname', players.surname='$newsurname',
-                    players.birth_years='$newbirth_years', players.shirt_number=NULL, players.team_ID='$team_id', players.team_name='$newteam' where players.ID='$ID'";
+                    players.birth_years='$newbirth_years', players.shirt_number=NULL, players.team_ID='$team_id' where players.ID='$ID'";
         }else{
             $sql = "UPDATE players, teams SET players.name='$newname', players.surname='$newsurname',
-                    players.birth_years='$newbirth_years', players.shirt_number='$newshirt_number', players.team_ID='$team_id', players.team_name='$newteam' where players.ID='$ID'";
+                    players.birth_years='$newbirth_years', players.shirt_number='$newshirt_number', players.team_ID='$team_id' where players.ID='$ID'";
         }
         
         
@@ -97,15 +97,16 @@
         <tr>
             <td>Komanda*:</td>
             <td><select name="newteam" class="textfields" >
-            <option id="0"> <?php echo $playerbyID['team_name']; ?> </option>
+            <option id="0"> <?php echo $playerbyID['teams_name']; ?> </option>
                 <?php 
                     $getallnames = $link->query("Select * FROM teams");
                     while ($viewallnames = mysqli_fetch_array($getallnames)){
-                        if ($viewallnames['teams_name'] != $playerbyID['team_name'] ){
-                ?>            <option id="<?php echo $viewallnames['ID']; ?>"><?php echo $viewallnames['teams_name']; ?></option>
+                        if ($viewallnames['teams_name'] != $playerbyID['teams_name'] ){
+                ?>             <option id="<?php echo $viewallnames['ID']; ?>"><?php echo $viewallnames['teams_name']; ?></option>
                    <?php }
                     } ?>
             </select></td>
+            
         </tr>
     </table>
     

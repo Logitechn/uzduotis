@@ -56,6 +56,14 @@
                 $uploadOk = 0;
             }
         }
+        
+        for ($seq = 0; file_exists($target_file); $seq++){
+            if(file_exists($target_file)){
+                $target_file = $target_dir . basename( $_FILES["fileToUpload"]["name"]) . $seq . '.' . $imageFileType;
+            } 
+            
+        }
+        
         if (!empty($_FILES["fileToUpload"]["name"])){
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
                 die ('Sorry, only JPG, JPEG, PNG & GIF files are allowed.');
@@ -84,13 +92,7 @@
                 foreach ($rows as $row)
                 {
                     if (!empty($_FILES["fileToUpload"]["name"])){
-                        if($row['team_ID'] == $ID){
-                            $sql = ("UPDATE teams, players SET teams.teams_name='$newname', players.team_name='$newname', teams.city='$newcity',
-                                    teams.logo_name='$target_file' where teams.ID='$ID' AND teams.ID = players.team_ID");
-                        }else{
-                            $sql = ("UPDATE teams SET teams_name='$newname', city='$newcity',
-                                    logo_name='$target_file' where ID='$ID'");
-                        }
+                        $sql = ("UPDATE teams SET teams_name='$newname', city='$newcity', logo_name='$target_file' where ID='$ID'");                        
                         $result = $link->query($sql) or die("Could not update".mysqli_error($link));
                         header("Location:teamslist.php");
                         die();

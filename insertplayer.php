@@ -49,7 +49,7 @@
  
     }
     
-    $sql="INSERT INTO players (name,surname,birth_years,shirt_number,team_ID,team_name) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.", '".$team_id."', '".$team_name."')";
+    $sql="INSERT INTO players (name,surname,birth_years,shirt_number,team_ID) VALUES ('".$nam."', '".$surn."', ".$birth.", ".$number.", '".$team_id."')";
     if (!$link->query($sql)) 
     {
          die('error: ' . mysqli_error($link));
